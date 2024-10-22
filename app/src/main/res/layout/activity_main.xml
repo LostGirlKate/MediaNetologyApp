@@ -5,15 +5,97 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:background="@color/white"
+    android:padding="16.dp"
+    tools:context=".presentation.MainActivity">
 
     <TextView
+        android:id="@+id/albom"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
+        android:text="@string/albom"
+        android:textColor="@color/grey"
+        android:textSize="12.sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:textColor="@color/black"
+        android:textSize="16.sp"
+        app:layout_constraintStart_toStartOf="@+id/albom"
+        app:layout_constraintTop_toBottomOf="@+id/albom"
+        tools:text="One More Lighr Live" />
+
+    <TextView
+        android:id="@+id/artist_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="@string/artist"
+        android:textColor="@color/grey"
+        android:textSize="12.sp"
+        app:layout_constraintStart_toStartOf="@+id/title"
+        app:layout_constraintTop_toBottomOf="@+id/title" />
+
+    <TextView
+        android:id="@+id/artist"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="3dp"
+        android:textColor="@color/black"
+        android:textSize="12.sp"
+        app:layout_constraintStart_toEndOf="@+id/artist_title"
+        app:layout_constraintTop_toTopOf="@+id/artist_title"
+        tools:text="Linkin Park" />
+
+    <TextView
+        android:id="@+id/published"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:textColor="@color/grey"
+        android:textSize="12.sp"
+        app:layout_constraintStart_toStartOf="@+id/artist_title"
+        app:layout_constraintTop_toBottomOf="@+id/artist_title"
+        tools:text="2017" />
+
+
+    <TextView
+        android:id="@+id/style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:textColor="@color/grey"
+        android:textSize="12.sp"
+        app:layout_constraintStart_toEndOf="@+id/published"
+        app:layout_constraintTop_toTopOf="@+id/published"
+        tools:text="альтернатива" />
+
+    <ImageButton
+        android:id="@+id/btn_albom_pleer"
+        android:layout_width="43dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="30dp"
+        android:backgroundTint="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/published"
+        app:srcCompat="@drawable/ic_play" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rc_albom"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="30dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/track_item"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_albom_pleer" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">MediaNetologyApp</string>
+    <string name="albom">АЛЬБОМ</string>
+    <string name="artist">Исполнитель: </string>
 </resources>
